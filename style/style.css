@@ -1,0 +1,340 @@
+*{
+    margin: 0;
+}
+/*STYLE FOR HEADER*/
+.gh{
+    width: 20px;
+    height: 20px;
+}
+.header{
+    width: 100%;
+    height: 60px;
+    background-color: #fcfeff;
+    border-bottom: 1px solid #e1effc;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+.logo{
+    text-decoration: none;
+    color: #1e6ca6;
+    font-weight: bold;
+    font-size: 30px;
+}
+.imgLogo{
+    width: 42px;
+    height: 42px;
+}
+.imgCherry{
+    width: 25px;
+    height: 25px;
+}
+.imgNoPhoto{
+    width: 35px;
+    height: 35px;
+    margin-left: 20px;
+}
+.imgBasket{
+    width: 35px;
+    height: 35px;
+    margin-top: -2px;
+}
+.menu{
+    display: flex;
+}
+.menuA{
+    text-decoration: none;
+    color: #1e6ca6;
+    padding: 20px;
+    font-size: 17px;
+}
+.flex{
+    display: flex;
+}
+.indents1{
+    margin-right: 15px;
+}
+.indents2{
+    padding-top: 5px;
+}
+.search{
+    display: flex;
+}
+.searchInputText{
+    border-radius: 5px;
+    border: 1px solid darkgray;
+    padding: 5px 8px 5px 8px;
+}
+.indents3{
+    padding-top: 4px;
+}
+.indents4{
+    padding-right: 40px;
+    padding-top: 4px;
+}
+.goButton{
+    border-radius: 5px;
+    background-color: #1e6ca6;
+    color: white;
+    border: 1px solid #1e6ca6;
+    margin-left: 10px;
+    padding: 5px 10px 5px 10px;
+    font-weight: bold;
+}
+/*MAIN STYLE*/
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+:root{
+    --red: #ff3838
+}
+
+*{
+    font-family: 'Nunito', sans-serif;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+*::selection{
+    background: #1e6ca6;
+    color: #fff;
+}
+html{
+    font-size: 60.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+}
+section{
+    padding: 2rem 9%;
+}
+.btn{
+    display: inline-block;
+    padding:.8rem 3rem;
+    border:.2rem solid #1e6ca6;
+    color:#1e6ca6 ;
+    cursor: pointer;
+    font-size: 1.7rem;
+    border-radius: .5rem;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    margin-top: 1rem;
+}
+.btnnn{
+    display: inline-block;
+    padding:.8rem 3rem;
+    border:.2rem solid #1e6ca6;
+    color:#1e6ca6 ;
+    cursor: pointer;
+    font-size: 1.5rem;
+    border-radius: .5rem;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    margin-top: 4px;
+    margin-left: -35px;
+}
+
+.btn::before{
+    content: '';
+    position: absolute;
+    top:0; right: 0;
+    width:0%;
+    height:100%;
+    background: #1e6ca6;
+    transition: .3s linear;
+    z-index: -1;
+}
+
+.btn:hover::before{
+    width:100%;
+    left: 0;
+}
+
+.btn:hover{
+    color:#fff;
+}
+
+body{
+    background: #f7f7f7;
+}
+
+/* Home Styling */
+.home{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    min-height: 85vh;
+    align-items: center;
+    background-color: white;
+    background-position: center;
+    background-size: cover;
+}
+.home .content{
+    flex: 1 1 40rem;
+    padding-top: 6.5rem;
+}
+.home .image{
+    flex: 1 1 30rem;
+}
+.home .image img{
+    width: 100%;
+    padding: 1rem;
+    animation: float 3s linear infinite;
+}
+@keyframes float{
+    0%, 100%{transform: translateY(0rem)}
+    50%{transform: translateY(3rem);}
+}
+
+.home .content h3{
+    font-size: 5rem;
+    color: #333;
+}
+.home .content p{
+    color: #666;
+    text-align: justify;
+    font-size: 14px;
+}
+
+/*QWERTYUIOP*/
+
+/* Home style End */
+/*
+Speciality Style Start */
+.heading{
+    text-align: center;
+    font-size: 3.5rem;
+    padding: 1rem;
+    color: #1e6ca6;
+}
+.heading span{
+    color: #1e6ca6;
+}
+
+.speciality .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+.speciality .box-container .box{
+    flex: 1 1 30rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 .5rem .1rem rgba(0,0,0,.1);
+    border: .3rem solid rgba(0,0,0,.1);
+    cursor: pointer;
+}
+
+.speciality .box-container .box .image{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: -100%;left: 0;
+    object-fit: cover;
+}
+.speciality .box-container .box .content{
+    text-align: center;
+    padding:2rem;
+    background: #fff;
+
+}
+.speciality .box-container .box .content img{
+    margin: 1.5rem 0;
+}
+.speciality .box-container .box .content h3{
+    font-size: 2.5rem;
+    color: #333;
+}
+.speciality .box-container .box .content p{
+    font-size: 1.6rem;
+    color: #666;
+    padding: 1rem 0;
+}
+.speciality .box-container .box:hover .image{
+    top: 0;
+}
+.speciality .box-container .box:hover .content{
+    transform: translateY(100%);
+}
+
+/* Popular Content Styling  */
+.popular .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap:1.5rem;
+    padding: 50px;
+}
+
+.popular .box-container .box{
+    padding:2rem;
+    background:#fff;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    border:.1rem solid rgba(0,0,0,.3);
+    border-radius: .5rem;
+    text-align: center;
+    flex:1 1 30rem;
+    position: relative;
+}
+
+.popular .box-container .box img{
+    height:25rem;
+    object-fit: cover;
+    width:100%;
+    border-radius: .5rem;
+}
+
+.popular .box-container .box .price{
+    position: absolute;
+    top:3rem; left:3rem;
+    background:#1e6ca6;
+    color:#fff;
+    font-size: 1.5rem;
+    padding:.5rem 1rem;
+    border-radius: .5rem;
+}
+
+.popular .box-container .box h3{
+    color: #1e6ca6;
+    font-size: 2.2rem;
+    padding-top: 1rem;
+}
+
+.popular .box-container .box .star i{
+    color: #1e6ca6;
+    font-size: 1.7rem;
+    padding:1rem .1rem;
+}
+/* Popular Styles End */
+*{
+    background-color: white;
+}
+.steps{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+.steps .box{
+    flex:1 1 25rem;
+    padding:1rem;
+    text-align: center;
+}
+.steps .box img{
+    border-radius: 50%;
+    border:1rem solid #fff;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+}
+.steps .box h3{
+    font-size: 2rem;
+    color:#333;
+    padding:1rem;
+}
+
+

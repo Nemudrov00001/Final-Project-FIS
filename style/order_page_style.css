@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+}
+input{
+    border-radius: 8px;
+    border: none;
+    height: 35px;
+}
+.p1 {
+    padding-top: 45px;
+    padding-left: 50px;
+    text-align: left;
+}
+.mainBox{
+    text-align: center;
+    width: 750px;
+    height: 550px;
+    background-color: WhiteSmoke;
+    border-radius: 25px;
+}
+.paddingBetweenNameAndSurname{
+    padding-left: 60px;
+}
+.SecondBoxDisplay{
+    display: flex;
+    padding-left: 50px;
+}
+
+.mainBoxDisplay{
+    display: flex;
+    padding-left: 50px;
+    padding-top: 25px;
+}
+.qq1{
+    padding-right: 145px;
+}
+.q1{
+    padding-top: 10px;
+}
+.qqq1{
+    padding-right: 24px;
+}
+.ww1{
+    padding-right: 100px;
+}
+
+.ee1{
+    padding-right: 276px;
+}
+#Address{
+    width: 375px;
+}
+.FirstBoxDisplay{
+    display: flex;
+    padding-left: 50px;
+    padding-top: 25px;
+}
+#houseNumber{
+    width: 100px;
+}
+#FlatQ{
+    width: 100px;
+}
+#entranceQ{
+    width: 100px;
+}
+#doorCode{
+    width: 100px;
+}
+#FloorQ{
+    width: 100px;
+}
+.rrr1{
+    padding-right: 25px;
+}
+.aa1{
+    padding-right: 410px;
+}
+#phoneNumber{
+    width: 240px;
+}
+.mmm1{
+
+}
+.submitButtonPad{
+    padding-top: 30px
+}
+.submitButton{
+    background-color: #1e6ca6;
+    font-weight: bold;
+    width: 200px;
+    border-radius: 10px;
+    color: white;
+}
+.red{
+    color: red;
+}

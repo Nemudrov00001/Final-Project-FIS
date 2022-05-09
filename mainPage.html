@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style/style.css" />
+    <link rel="shortcut icon" href="images/36449961.png" type="image/png">
+    <title>FLYBERRY</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body onload="welcomUser()">
+<div class="header">
+    <div class="flex">
+        <div class="indents1"><a href="#"><img src="images/36449961.png" class="imgLogo"></a></div>
+        <div class="indents2"><a href="#" class="logo">FLYBERRY</a></div>
+        <div class="indents2"><img src="images/cherry.png" class="imgCherry"></div>
+    </div>
+    <div class="menu">
+        <div><a href="#" class="menuA">Home</a></div>
+        <div><a href="./restaurantPage/restaurantPage.html" class="menuA">Restaurant</a></div>
+        <div><a href="./productsPage/productsPage.html" class="menuA">Products</a></div>
+        <div><a href="./servicesPages/servicesPage.html" class="menuA">Services</a></div>
+    </div>
+    <div class="flex">
+        <div class="indents3"><input type="text" class="searchInputText"></div>
+        <div class="indents4"><button type="submit" class="goButton">SEARCH</button></div>
+        <div><a href="#"><img class="imgBasket" src="images/icons8-избранные-товары-96.png"></a></div>
+        <div><a href="#"><img class="imgNoPhoto" src="images/icons8-имя-96.png"></a></div>
+    </div>
+    <div>
+        <h1 id="userNameDiv"> </h1>
+        <a onclick="logout()" href="index.html" class="btnnn">LOG OUT</a>
+    </div>
+</div>
+<section class="home" id="home">
+    <div class="content">
+        <h3 style="color: #1e6ca6;">food made with love</h3>
+        <p>Flyberry operates in more than 14 major cities throughout Kazakhstan.
+            Our dominant position in the market means that many restaurants are willing to work with us.
+            This guarantees plenty of options for consumers, creating a positive feedback loop for growth.</p>
+        <a href="#" class="btn">Order now</a>
+    </div>
+    <div class="image">
+        <img src="images/home-img.png" alt="">
+    </div>
+</section>
+
+
+<!-- Popular Section Start -->
+<section class="popular" id="popular">
+    <h1 class="heading">MOST <span> POPULAR </span>FOODS</h1>
+    <br>
+    <div class="box-container">
+        <div class="box" style="background-color: #fcfeff">
+            <span class="price">PRICE: 3990 KZT</span>
+            <img src="https://chefrestoran.ru/wp-content/uploads/2018/10/1053796058.jpg" alt="">
+            <h3>tasty burger</h3>
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <a href="#" class="btn">order now</a>
+        </div>
+        <div class="box" style="background-color: #fcfeff">
+            <span class="price">PRICE: 2590 KZT</span>
+            <img src="http://heyburger.kz/uploads/store/product/11498b3098aabfaf1d53ef25ac8e06a3.jpg" alt="">
+            <h3>beef doner</h3>
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <a href="#" class="btn">order now</a>
+        </div>
+        <div class="box" style="background-color: #fcfeff">
+            <span class="price">PRICE: 1290 KZT</span>
+            <img src="https://object.pscloud.io/cms/cms/Uploads/glav_a.jpg" alt="">
+            <h3>Pizza</h3>
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <a href="#" class="btn">order now</a>
+        </div>
+        <div class="box" style="background-color: #fcfeff">
+            <span class="price">PRICE: 1790 KZT</span>
+            <img src="https://growfood.pro/blog/wp-content/uploads/2017/12/sushi-pravilnoe-pitanie2.jpg" alt="">
+            <h3>sushi</h3>
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <a href="#" class="btn">order now</a>
+        </div>
+        <div class="box" style="background-color: #fcfeff">
+            <span class="price">PRICE: 4990 KZT</span>
+            <img src="https://aif-s3.aif.ru/images/020/410/1663400190c63b1e96cb76f7afa72973.jpg" alt="">
+            <h3>Meat on the fire</h3>
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <a href="#" class="btn">order now</a>
+        </div>
+        <div class="box" style="background-color: #fcfeff">
+            <span class="price">PRICE: 2890 KZT</span>
+            <img src="https://cooklikemary.ru/sites/default/files/shashlik_0.jpg_0.jpg" alt="">
+            <h3>Meat</h3>
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <a href="#" class="btn">order now</a>
+        </div>
+    </div>
+</section>
+<!-- Popular Section Start -->
+<section class="steps">
+    <div class="box">
+        <img src="images/step-1.jpg" alt="">
+        <h3 style="color: #1e6ca6">choose your favorite food</h3>
+    </div>
+
+    <div class="box">
+        <img src="images/step-2.jpg" alt="">
+        <h3 style="color: #1e6ca6">free and fast delivery</h3>
+    </div>
+    <div class="box">
+        <img src="images/step-3.jpg" alt="">
+        <h3 style="color: #1e6ca6">easy payments method</h3>
+    </div>
+    <div class="box">
+        <img src="images/step-4.jpg" alt="">
+        <h3 style="color: #1e6ca6">enjoy your food</h3>
+    </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
