@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="productsPageStyle.css" />
+    <link rel="shortcut icon" href="../images/36449961.png" type="image/png">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link type="text/css" href="CSS/main.css" rel="stylesheet" />
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+            integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+            crossorigin="anonymous"
+    />
+    <script src="JS/jquery-3.5.1.min.js"></script>
+    <script src="JS/multislider.min.js"></script>
+    <title>FLYBERRY/Products</title>
+</head>
+<body>
+<div class="header">
+    <div class="flex">
+        <div class="indents1"><a href="#"><img src="../images/36449961.png" class="imgLogo"></a></div>
+        <div class="indents2"><a href="#" class="logo">FLYBERRY</a></div>
+        <div class="indents2"><img src="../images/cherry.png" class="imgCherry"></div>
+    </div>
+    <div class="menu">
+        <div><a href="../mainPage.html" class="menuA">Home</a></div>
+        <div><a href="../restaurantPage/restaurantPage.html" class="menuA">Restaurant</a></div>
+        <div><a href="#" class="menuA">Products</a></div>
+        <div><a href="../servicesPages/servicesPage.html" class="menuA">Services</a></div>
+    </div>
+    <div class="flex">
+        <div class="indents3"><input type="text" class="searchInputText"></div>
+        <div class="indents4"><button type="submit" class="goButton">SEARCH</button></div>
+        <div><a href="#"><img class="imgNoPhoto" src="../images/icons8-имя-96.png"></a></div>
+        <div>
+            <!--Shopping cart-->
+            <div class="shopping-cart">
+                <div class="sum-prices">
+                    <!--Shopping cart logo-->
+                    <div class=" shoppingCartButton">
+                        <div><a href="#"><img class="imgBasket" src="../images/icons8-избранные-товары-96.png"></a></div>
+                    </div>
+                    <!--The total prices of products in the shopping cart -->
+                    <h1 id="sum-prices" style="color: #1e6ca6"></h1>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h1 id="userNameDiv"> </h1>
+            <a onclick="logout()" href="index.html" class="btnnn">LOG OUT</a>
+        </div>
+    </div>
+    <div>
+        <button id="menuButton"><i class="fas fa-bars"></i></button>
+    </div>
+</div>
+<br><br><br><br><br>
+<!--Navbar-->
+<nav>
+    </div>
+    <div class="producstOnCart hide">
+        <div class="overlay"></div>
+        <div class="top">
+            <button id="closeButton">
+                <i class="fas fa-times-circle"></i>
+            </button>
+            <h3>Cart</h3>
+        </div>
+        <ul id="buyItems">
+            <h4 class="empty">Your shopping cart is empty</h4>
+            <!-- <li class="buyItem">
+                <img src="Images/producs-images/Mobiles/galaxynote10.png">
+                <div>
+                    <h5>Products Name</h5>
+                    <h6>$199</h6>
+                    <div>
+                        <button>-</button>
+                        <span class="countOfProduct">1</span>
+                        <button>+</button>
+                    </div>
+                </div>
+            </li> -->
+        </ul>
+        <button class="btn checkout hidden" onclick="document.location='http://localhost/FLYBERRY/orderPage.php'">Check out</button>
+    </div>
+</nav>
+<main>
+    <section class="main-section">
+        <div class="product-container">
+            <h3>POPULAR FOOS</h3>
+            <div class="products">
+                <div class="product">
+                    <div class="product-under">
+                        <figure class="product-image">
+                            <img
+                                    src="data:image/jpeg;base64,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"
+                                    alt="popular labtops and computers"
+                            />
+                            <div class="product-over">
+                                <button
+                                        class="btn btn-small addToCart"
+                                        data-product-id="1"
+                                >
+                                    <i class="fas fa-cart-plus"></i>Add
+                                    to cart
+                                </button>
+                                <a
+                                        href="detail_page.html"
+                                        class="btn btn-small"
+                                >More Info</a
+                                >
+                            </div>
+                        </figure>
+                        <div class="product-summary">
+                            <h4 class="productName">Product 1</h4>
+                            <span class="stars"></span>
+                            <h6 class="price">
+                                $<span class="priceValue">999</span>
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="product">
+                    <div class="product-under">
+                        <figure class="product-image">
+                            <img
+                                    src="https://cdn.vkuso.ru/uploads/xrustyashhie-chiken-naggets-po-domashnemu.jpg"
+                                    alt="popular labtops and computers"
+                            />
+                            <div class="product-over">
+                                <button
+                                        class="btn btn-small addToCart"
+                                        data-product-id="2"
+                                >
+                                    <i class="fas fa-cart-plus"></i>Add
+                                    to cart
+                                </button>
+                                <a
+                                        href="detail_page.html"
+                                        class="btn btn-small"
+                                >More Info</a
+                                >
+                            </div>
+                        </figure>
+                        <div class="product-summary">
+                            <h4 class="productName">Product 2</h4>
+                            <span class="stars"></span>
+
+                            <h6 class="price">
+                                $<span class="priceValue">599</span>
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="product">
+                    <div class="product-under">
+                        <figure class="product-image">
+                            <img
+                                    src="https://rutxt.ru/files/15888/original/02658cf8a4.JPG"
+                                    alt="popular labtops and computers"
+                            />
+                            <div class="product-over">
+                                <button
+                                        class="btn btn-small addToCart"
+                                        data-product-id="3"
+                                >
+                                    <i class="fas fa-cart-plus"></i>Add
+                                    to cart
+                                </button>
+                                <a
+                                        href="detail_page.html"
+                                        class="btn btn-small"
+                                >More Info</a
+                                >
+                            </div>
+                        </figure>
+                        <div class="product-summary">
+                            <h4 class="productName">Product 3</h4>
+                            <span class="stars"></span>
+
+                            <h6 class="price">
+                                $<span class="priceValue">650</span>
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="product">
+                    <div class="product-under">
+                        <figure class="product-image">
+                            <img
+                                    src="https://chefrestoran.ru/wp-content/uploads/2018/10/1053796058.jpg"
+                                    alt="popular labtops and computers"
+                            />
+                            <div class="product-over">
+                                <button
+                                        class="btn btn-small addToCart"
+                                        data-product-id="4"
+                                >
+                                    <i class="fas fa-cart-plus"></i>Add
+                                    to cart
+                                </button>
+                                <a
+                                        href="detail_page.html"
+                                        class="btn btn-small"
+                                >More Info</a
+                                >
+                            </div>
+                        </figure>
+                        <div class="product-summary">
+                            <h4 class="productName">Product 4</h4>
+                            <span class="stars"></span>
+
+                            <h6 class="price">
+                                $<span class="priceValue">899</span>
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br><br><br><br>
+    <section class="main-section">
+        <div class="pop-mobiles">
+            <h3>Popular mobiles</h3>
+            <div class="pop-mobiles-2">
+                <ul class="products">
+                    <li class="product">
+                        <div class="product-under">
+                            <figure class="product-image">
+                                <img
+                                        src="https://art-lunch.ru/content/uploads/2018/07/Greek_salad_01.jpg"
+                                        alt="popular mobiles"
+                                />
+                                <div class="product-over">
+                                    <button
+                                            class="btn btn-small addToCart"
+                                            data-product-id="5"
+                                    >
+                                        <i class="fas fa-cart-plus"></i
+                                        >Add to cart
+                                    </button>
+                                    <a
+                                            href="detail_page.html"
+                                            class="btn btn-small"
+                                    >More Info</a
+                                    >
+                                </div>
+                            </figure>
+                            <div class="product-summary">
+                                <h4 class="productName">Product 5</h4>
+                                <span class="stars"></span>
+                                <h4 class="price">
+                                    $<span class="priceValue"
+                                >1099</span
+                                >
+                                </h4>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="product">
+                        <div class="product-under">
+                            <figure class="product-image">
+                                <img
+                                        src="https://www.maggi.ru/data/images/recept/img640x618/recept_27821_6u0d.jpg"
+                                        alt="popular mobiles"
+                                />
+                                <div class="product-over">
+                                    <button
+                                            class="btn btn-small addToCart"
+                                            data-product-id="6"
+                                    >
+                                        <i class="fas fa-cart-plus"></i
+                                        >Add to cart
+                                    </button>
+                                    <a
+                                            href="detail_page.html"
+                                            class="btn btn-small"
+                                    >More Info</a
+                                    >
+                                </div>
+                            </figure>
+                            <div class="product-summary">
+                                <h4 class="productName">Product 6</h4>
+                                <span class="stars"></span>
+                                <h4 class="price">
+                                    $<span class="priceValue">999</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="product">
+                        <div class="product-under">
+                            <figure class="product-image">
+                                <img
+                                        src="https://zira.uz/wp-content/uploads/2018/07/italyanskiy-salat-2.jpg"
+                                        alt="popular mobiles"
+                                />
+                                <div class="product-over">
+                                    <button
+                                            class="btn btn-small addToCart"
+                                            data-product-id="7"
+                                    >
+                                        <i class="fas fa-cart-plus"></i
+                                        >Add to cart
+                                    </button>
+                                    <a
+                                            href="detail_page.html"
+                                            class="btn btn-small"
+                                    >More Info</a
+                                    >
+                                </div>
+                            </figure>
+                            <div class="product-summary">
+                                <h4 class="productName">Product 7</h4>
+                                <span class="stars"></span>
+                                <h4 class="price">
+                                    $<span class="priceValue">800</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="product">
+                        <div class="product-under">
+                            <figure class="product-image">
+                                <img
+                                        src="https://zira.uz/wp-content/uploads/2018/07/italyanskiy-salat-2.jpg"
+                                        alt="popular mobiles"
+                                />
+                                <div class="product-over">
+                                    <button
+                                            class="btn btn-small addToCart"
+                                            data-product-id="8"
+                                    >
+                                        <i class="fas fa-cart-plus"></i
+                                        >Add to cart
+                                    </button>
+                                    <a
+                                            href="detail_page.html"
+                                            class="btn btn-small"
+                                    >More Info</a
+                                    >
+                                </div>
+                            </figure>
+                            <div class="product-summary">
+                                <h4 class="productName">Product 8</h4>
+                                <span class="stars"></span>
+                                <h4 class="price">
+                                    $<span class="priceValue">599</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="product">
+                        <div class="product-under">
+                            <figure class="product-image">
+                                <img
+                                        src="https://zira.uz/wp-content/uploads/2018/07/italyanskiy-salat-2.jpg"
+                                        alt="popular mobiles"
+                                />
+                                <div class="product-over">
+                                    <button
+                                            class="btn btn-small addToCart"
+                                            data-product-id="9"
+                                    >
+                                        <i class="fas fa-cart-plus"></i
+                                        >Add to cart
+                                    </button>
+                                    <a
+                                            href="detail_page.html"
+                                            class="btn btn-small"
+                                    >More Info</a
+                                    >
+                                </div>
+                            </figure>
+                            <div class="product-summary">
+                                <h4 class="productName">Product 9</h4>
+                                <span class="stars"></span>
+                                <h4 class="price">
+                                    $<span class="priceValue">850</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="product">
+                        <div class="product-under">
+                            <figure class="product-image">
+                                <img
+                                        src="https://www.kulina.ru/images/art/14009.jpg"
+                                        alt="popular mobiles"
+                                />
+                                <div class="product-over">
+                                    <button
+                                            class="btn btn-small addToCart"
+                                            data-product-id="10"
+                                    >
+                                        <i class="fas fa-cart-plus"></i
+                                        >Add to cart
+                                    </button>
+                                    <a
+                                            href="detail_page.html"
+                                            class="btn btn-small"
+                                    >More Info</a
+                                    >
+                                </div>
+                            </figure>
+                            <div class="product-summary">
+                                <h4 class="productName">Product 10</h4>
+                                <span class="stars"></span>
+                                <h4 class="price">
+                                    $<span class="priceValue">769</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</main>
+<script src="productsPage.js"></script>
+<script src="JS/script.js"></script>
+<script src="shopping-cart.js"></script>
+</body>
+</html>
